@@ -72,7 +72,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                            padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -148,7 +148,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 60, 20, 0),
+                            padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                             child: TextFormField(
                               controller: emailAddressController,
                               obscureText: false,
