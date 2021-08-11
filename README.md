@@ -1,6 +1,6 @@
 # projext
 
-A new Flutter project.
+Just testing the waters with Flutter
 
 ## Getting Started
 
