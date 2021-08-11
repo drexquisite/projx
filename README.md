@@ -1,8 +1,6 @@
 # projext
 
-Just testing the waters with Flutter.
-
-By Iffad Iqbal - Updated 2021
+A new Flutter project.
 
 ## Getting Started
 

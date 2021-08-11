@@ -20,41 +20,54 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       body: SafeArea(
-        child: Align(
-          alignment: Alignment(0, 0),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(0, 600, 0, 0),
-            child: FFButtonWidget(
-              onPressed: () async {
-                await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoginSignUpWidget(),
-                  ),
-                );
-              },
-              text: '',
-              icon: Icon(
-                Icons.home_sharp,
-                size: 65,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment(-0.05, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment(0, 0),
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, 600, 0, 0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginSignUpWidget(),
+                            ),
+                          );
+                        },
+                        text: '',
+                        icon: Icon(
+                          Icons.home_sharp,
+                          size: 45,
+                        ),
+                        options: FFButtonOptions(
+                          width: 100,
+                          height: 100,
+                          color: FlutterFlowTheme.primaryColor,
+                          textStyle: FlutterFlowTheme.subtitle2.override(
+                            fontFamily: 'Poppins',
+                            color: Colors.white,
+                          ),
+                          elevation: 15,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: 120,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
-              options: FFButtonOptions(
-                width: 100,
-                height: 100,
-                color: FlutterFlowTheme.primaryColor,
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
-                elevation: 15,
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                ),
-                borderRadius: 120,
-              ),
-            ),
-          ),
+            )
+          ],
         ),
       ),
     );

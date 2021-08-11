@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -54,11 +55,21 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset(
-                                'assets/images/logoRobin@3x.png',
-                                width: 240,
-                                height: 60,
-                                fit: BoxFit.cover,
+                              InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HomePageWidget(),
+                                    ),
+                                  );
+                                },
+                                child: Image.asset(
+                                  'assets/images/logoRobin@3x.png',
+                                  width: 240,
+                                  height: 60,
+                                  fit: BoxFit.cover,
+                                ),
                               )
                             ],
                           ),
