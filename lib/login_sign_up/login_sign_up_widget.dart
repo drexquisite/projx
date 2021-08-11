@@ -1,6 +1,8 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -51,12 +53,22 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
-                            'P L A C E',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 30,
-                              fontWeight: FontWeight.w200,
+                          InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePageWidget(),
+                                ),
+                              );
+                            },
+                            child: AutoSizeText(
+                              'P L A C E',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Poppins',
+                                fontSize: 30,
+                                fontWeight: FontWeight.w100,
+                              ),
                             ),
                           ),
                           Padding(
