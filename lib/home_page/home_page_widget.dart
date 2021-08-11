@@ -36,7 +36,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               text: '',
               icon: Icon(
                 Icons.home_sharp,
-                size: 95,
+                size: 65,
               ),
               options: FFButtonOptions(
                 width: 100,
