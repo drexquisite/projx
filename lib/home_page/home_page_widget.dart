@@ -75,7 +75,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             fontFamily: 'Poppins',
                             color: Colors.white,
                           ),
-                          elevation: 15,
+                          elevation: 8,
                           borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1,
