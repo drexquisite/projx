@@ -1,7 +1,9 @@
+import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login_sign_up/login_sign_up_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,8 +14,27 @@ class HomePageWidget extends StatefulWidget {
   _HomePageWidgetState createState() => _HomePageWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _HomePageWidgetState extends State<HomePageWidget>
+    with TickerProviderStateMixin {
+  final animationsMap = {
+    'textOnPageLoadAnimation': AnimationInfo(
+      curve: Curves.easeIn,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 490,
+      fadeIn: true,
+    ),
+  };
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    startAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +86,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   )
                 ],
+              ),
+            ),
+            Align(
+              alignment: Alignment(0, 0),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 250),
+                child: AutoSizeText(
+                  'P L A C E',
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.bodyText1.override(
+                    fontFamily: 'Lato',
+                    fontSize: 35,
+                    fontWeight: FontWeight.w200,
+                  ),
+                ).animated([animationsMap['textOnPageLoadAnimation']]),
               ),
             )
           ],
